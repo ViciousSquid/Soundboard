@@ -2,10 +2,14 @@
 This file defines the Button class, which represents a single button in the GUI.
 '''
 import tkinter as tk
+
 class Button(tk.Button):
+
     def __init__(self, master, audio_manager):
-        super().__init__(master, text="Empty", command=self.play_audio)
+        super().__init__(master, text="Empty", command=self.play_audio, bg='tomato')
         self['font'] = ("Arial", 12)
+        self['height'] = 4
+        self['width'] = 25
         self.audio_manager = audio_manager
         self.audio_index = None
     def play_audio(self):
