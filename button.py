@@ -5,6 +5,7 @@ import tkinter as tk
 class Button(tk.Button):
     def __init__(self, master, audio_manager):
         super().__init__(master, text="Empty", command=self.play_audio)
+        self['font'] = ("Arial", 12)
         self.audio_manager = audio_manager
         self.audio_index = None
     def play_audio(self):
