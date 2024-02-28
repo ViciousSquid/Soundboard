@@ -1,6 +1,11 @@
 # Soundboard
  A simple tool for assigning audio files (WAV or MP3) onto buttons. Designed scenarios are for live or studio productions with a touch-screen device
 
+![Screenshot](https://imgur.com/a/wkZWiLC)
+
+I built this tool for work with the goal of it one-day becoming a toolbox for audio engineers
+
+
 ## Requirements
 
 pygame==1.9.6
@@ -11,4 +16,4 @@ pygame==1.9.6
 To load an audio file onto a button, use the "File" menu to choose an audio file. Once selected, the corresponding button will display the name of the loaded file.
 Only six files are currently supported at a time (one for each button) if you need more than this, launch another instance. 
 
-Suggestions/contributions welcomed for improvement!
+Suggestions/contributions welcomed
