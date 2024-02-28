@@ -1,9 +1,9 @@
 # Soundboard
- A simple tool for assigning audio files (WAV or MP3) onto buttons. Designed scenarios are for live or studio productions with a touch-screen device
+ A simple tool for assigning audio files (WAV or MP3) onto buttons. For live or studio productions with a touch-screen device
 
 ![Screenshot](https://github.com/ViciousSquid/Soundboard/assets/161540961/f232c32c-3b63-4505-8ca1-280d81ff096e)
 
-I built this tool for work with the goal of it one-day becoming a toolbox for audio engineers
+I built this tool for my work needs; one-day it may become a toolbox for audio engineers. Currently very basic.
 
 
 ## Requirements
