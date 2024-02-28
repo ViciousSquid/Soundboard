@@ -10,7 +10,7 @@ My goal is for this to evolve into a digital toolbox for audio production. Small
 
 ## Requirements
 
-pygame==1.9.6
+pygame 1.9.6 or greater
 
 
 ## Usage
