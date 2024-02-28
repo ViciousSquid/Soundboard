@@ -1,7 +1,8 @@
 # Soundboard
  A simple tool for assigning audio files (WAV or MP3) onto buttons. Useful in live/studio productions with a touch-screen.
 
-![Screenshot](https://github.com/ViciousSquid/Soundboard/assets/161540961/f232c32c-3b63-4505-8ca1-280d81ff096e)
+![image](https://github.com/ViciousSquid/Soundboard/assets/161540961/28b34dde-c71e-44a7-8ab3-3126edb000a8)
+
 
 I would absolutely welcome any suggestions for improvements, changes, advice.
 
