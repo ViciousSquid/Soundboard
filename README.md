@@ -3,7 +3,9 @@
 
 ![Screenshot](https://github.com/ViciousSquid/Soundboard/assets/161540961/f232c32c-3b63-4505-8ca1-280d81ff096e)
 
-I built this tool for my work needs; one-day it may become a toolbox for audio engineers. Currently very basic.
+I would absolutely welcome any suggestions for improvements, changes, advice.
+
+My goal is for this to evolve into a digital toolbox for audio production. Small app with big dreams.
 
 
 ## Requirements
