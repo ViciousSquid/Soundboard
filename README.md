@@ -1,5 +1,6 @@
 # Soundboard
-A simple tool for assigning audio files (WAV or MP3) onto buttons. Useful for live/studio productions when using a touch-screen.
+A simple tool to assign audio files onto buttons and play them using Tkinter.
+Useful for live/studio productions when using a touch-screen.
 
 ![image](https://github.com/ViciousSquid/Soundboard/assets/161540961/44e21c3f-183e-4d02-aa0a-6ee6aa4f3af7)
 
