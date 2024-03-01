@@ -1,5 +1,5 @@
 '''
-Current version 0.19
+Current version 0.19a
 '''
 print(" +++ Soundboard by Vicious Squid")
 print("Importing libraries...")
@@ -20,15 +20,12 @@ class Application(ttk.Window):
         self.audio_manager = AudioManager()
         self.buttons = []
       
-        # Create the button grid
-        for i in range(4):
+        # Create the button grid         
+        for i in range(8):
+            row = int(i / 4)
+            column = i % 4
             button = Button(self, self.audio_manager)
-            button.grid(row=0, column=i, padx=10, pady=10)
-            self.buttons.append(button)
-            
-        for i in range(4):
-            button = Button(self, self.audio_manager)
-            button.grid(row=1, column=i, padx=10, pady=10)
+            button.grid(row=row, column=column, padx=10, pady=10)
             self.buttons.append(button)
 
             # Menus
@@ -51,9 +48,9 @@ class Application(ttk.Window):
             audio_name = os.path.basename(file_path)
             self.buttons[len(self.audio_manager.audio_files) - 1].set_audio(len(self.audio_manager.audio_files) - 1, audio_name)
 
-              # This box exists to help with official internal versioning
+              # This box exists to help with official internal versioning - please don't remove x
     def show_about_info(self):
-            messagebox.showinfo(title="Soundboard", message="Version 0.19       https://github.com/ViciousSquid/Soundboard")
+            messagebox.showinfo(title="Soundboard", message="Version 0.19a       https://github.com/ViciousSquid/Soundboard")
 
     def toggle_mute(self):
         mixer.music.stop()
