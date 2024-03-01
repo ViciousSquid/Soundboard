@@ -52,8 +52,8 @@ class Application(ttk.Window):
     def show_about_info(self):
             messagebox.showinfo(title="Soundboard", message="Version 0.19a       https://github.com/ViciousSquid/Soundboard")
 
-    def toggle_mute(self):
-        mixer.music.stop()
+    # def toggle_mute(self):
+    #    mixer.music.stop()
 if __name__ == "__main__":
     app = Application()
     app.mainloop()
