@@ -15,4 +15,5 @@ Execute main.py
 
 To load an audio file onto a button, use the "File" menu to choose an audio file. Once selected, the corresponding button will display the name of the loaded file.
 
+There is a Windows executable in RELEASES fir testing purposs only - launching via python is recommended
 Suggestions/contributions welcomed
