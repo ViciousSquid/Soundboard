@@ -13,6 +13,8 @@ pygame 1.9.6 or greater
 ## Usage
 Execute main.py
 
-Use the "File" menu to load an audio file. Once selected, the button will turn green & display the name of the loaded file.
+Use the "File" menu to load an audio file. Click the button to play the file. 
+
+Multiple Instances are supported
 
 Suggestions/contributions welcomed
