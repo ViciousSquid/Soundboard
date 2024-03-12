@@ -13,6 +13,6 @@ pygame 1.9.6 or greater
 ## Usage
 Execute main.py
 
-To load an audio file onto a button, use the "File" menu to choose an audio file. Once selected, the corresponding button will display the name of the loaded file.
+Use the "File" menu to load an audio file. Once selected, the button will turn green & display the name of the loaded file.
 
 Suggestions/contributions welcomed
