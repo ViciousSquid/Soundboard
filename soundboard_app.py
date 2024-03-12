@@ -48,5 +48,5 @@ class SoundboardApp(tk.Tk):
     def show_about(self):
         messagebox.showinfo(
             title="Soundboard",
-            message="Version 1.1\nhttps://github.com/ViciousSquid/Soundboard",
+            message="Version 1.2\nhttps://github.com/ViciousSquid/Soundboard",
         )
