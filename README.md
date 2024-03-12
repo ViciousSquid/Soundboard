@@ -11,7 +11,10 @@ pygame 1.9.6 or greater
 
 
 ## Usage
-Execute main.py
+
+There is a Windows EXE in releases
+
+Otherwise, Execute main.py with python
 
 Use the "File" menu to load an audio file. Click the button to play the file. 
 
