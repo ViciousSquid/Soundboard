@@ -38,12 +38,15 @@ class SoundboardApp(tk.Tk):
             filetypes=[("Audio Files", "*.mp3 *.wav")]
         )
         if file_path:
-            self.audio_manager.load_audio(file_path)
-            audio_name = os.path.basename(file_path)
-            for button in self.buttons:
-                if button.audio_index is None:
-                    button.set_audio(len(self.audio_manager.audio_files) - 1, audio_name)
-                    break
+            try:
+                self.audio_manager.load_audio(file_path)
+                audio_name = os.path.basename(file_path)
+                for button in self.buttons:
+                    if button.audio_path is None:
+                        button.set_audio(file_path, audio_name)
+                        break
+            except Exception as e:
+                messagebox.showerror("Error", str(e))
 
     def show_about(self):
         messagebox.showinfo(
