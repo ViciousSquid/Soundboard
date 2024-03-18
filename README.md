@@ -2,7 +2,8 @@
 A **jingle machine** for assigning audio files onto buttons.
 Useful for live/studio productions when using a touch-screen.
 
-![image](https://github.com/ViciousSquid/Soundboard/assets/161540961/757c7a3a-bd50-4931-b552-a3207e47cad7)
+![Screenshot 2024-03-18 231733](https://github.com/ViciousSquid/Soundboard/assets/161540961/641da466-172e-45dc-9e90-d8dd6eda9d91)
+
 
 ## Features
 
