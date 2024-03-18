@@ -1,3 +1,6 @@
+# audio_manager.py
+# version 1.22.10
+
 import pygame
 from collections import defaultdict
 

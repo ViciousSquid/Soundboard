@@ -1,23 +1,38 @@
+# soundboard_app.py
+# version 1.22.10
+
 import os
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, simpledialog
 import tkinter.colorchooser as colorchooser
 from audio_manager import AudioManager
 from sound_button import SoundButton
+from keyboard_shortcut_handler import KeyboardShortcutHandler
+
+# Generate a random hex colour on startup
+import random
+random_number = random.randint(0,16777215)
+hex_number = str(hex(random_number))
+hex_number ='#'+ hex_number[2:]
+# Debug Log it
+print(" ")
+print("LOG: Randomly generated hex colour: ", hex_number)
 
 class SoundboardApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Soundboard")
         self.audio_manager = AudioManager()
-        self.bar_color = "#000000"  # Default color
+        self.bar_color = hex_number # Apply the previously generated hex colour
         self.create_menu()
 
-        # Create a container frame for the buttons
         self.buttons_frame = tk.Frame(self)
-        self.buttons_frame.pack(pady=10)  # Add some padding
+        self.buttons_frame.pack(pady=10)
 
         self.create_buttons()
+
+        # Create an instance of KeyboardShortcutHandler
+        self.shortcut_handler = KeyboardShortcutHandler(self)
 
     def create_menu(self):
         menu_bar = tk.Menu(self)
@@ -30,12 +45,12 @@ class SoundboardApp(tk.Tk):
         settings_menu = tk.Menu(menu_bar)
         menu_bar.add_cascade(label="Settings", menu=settings_menu)
         settings_menu.add_command(label="Change Bar Colour", command=self.pick_color)
+        settings_menu.add_command(label="Assign Shortcuts", command=self.assign_shortcuts)
 
         help_menu = tk.Menu(menu_bar)
         menu_bar.add_cascade(label="Help", menu=help_menu)
         help_menu.add_command(label="About", command=self.show_about)
 
-        # Create a Frame for the color bar
         self.color_bar_frame = tk.Frame(self, height=5, bg=self.bar_color)
         self.color_bar_frame.pack(side=tk.TOP, fill=tk.X)
 
@@ -55,9 +70,7 @@ class SoundboardApp(tk.Tk):
             self.buttons.append(button)
 
     def load_audio(self):
-        file_path = filedialog.askopenfilename(
-            filetypes=[("Audio Files", "*.mp3 *.wav")]
-        )
+        file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mp3 *.wav")])
         if file_path:
             try:
                 self.audio_manager.load_audio(file_path)
@@ -69,8 +82,16 @@ class SoundboardApp(tk.Tk):
             except Exception as e:
                 messagebox.showerror("Error", str(e))
 
+    def assign_shortcuts(self):
+        for button in self.buttons:
+            if button.audio_path:
+                shortcut_key = simpledialog.askstring(
+                    "Assign Shortcut",
+                    f"Enter a shortcut key for '{button['text']}':",
+                    parent=self
+                )
+                if shortcut_key:
+                    self.shortcut_handler.register_shortcut(button, shortcut_key)
+
     def show_about(self):
-        messagebox.showinfo(
-            title="Soundboard",
-            message="Version 1.22\nhttps://github.com/ViciousSquid/Soundboard",
-        )
+        messagebox.showinfo(title="Soundboard", message="Version 1.22.10\nhttps://github.com/ViciousSquid/Soundboard")
