@@ -1,8 +1,8 @@
 # Soundboard
-A **jingle machine** for assigning audio files onto buttons.
+A **jingle machine** for audio engineers.
 Useful for live/studio productions when using a touch-screen.
 
-![Screenshot 2024-03-18 231733](https://github.com/ViciousSquid/Soundboard/assets/161540961/641da466-172e-45dc-9e90-d8dd6eda9d91)
+![image](https://github.com/ViciousSquid/Soundboard/assets/161540961/a9bdd7d6-a98c-4e6d-b08a-e996a705ec95)
 
 
 ## Features
