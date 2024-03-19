@@ -13,7 +13,8 @@ Useful for live/studio productions when using a touch-screen.
 
 ## Usage
 
-There is a Windows EXE in releases
+There is a **Windows EXE** in releases:
+[https://github.com/ViciousSquid/Soundboard/releases]
 
 Otherwise, Execute main.py with python (prerequisite of pygame 1.9.6+ is required)
 
