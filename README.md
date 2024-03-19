@@ -18,7 +18,12 @@ There is a **Windows EXE** in releases:
 
 Otherwise, Execute main.py with python (prerequisite of pygame 1.9.6+ is required)
 
-Use the "File" menu to load an audio file. Click the button to play the file. 
+UI:
+
+Use the "File" menu to load an audio file. Click the assigned button to play the file. 
+Keyboard shortcuts can be assigned using Settings Menu > Assign Shortcuts
+
+The bar at the top of the app can be changed using Settings Menu > Change Bar Colour
 
 Multiple Instances are supported
 
