@@ -1,6 +1,3 @@
-# soundboard_app.py
-# version 1.22.10
-
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
@@ -70,15 +67,21 @@ class SoundboardApp(tk.Tk):
             self.buttons.append(button)
 
     def load_audio(self):
-        file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mp3 *.wav")])
-        if file_path:
+        folder_path = filedialog.askdirectory()
+        if folder_path:
             try:
-                self.audio_manager.load_audio(file_path)
-                audio_name = os.path.basename(file_path)
-                for button in self.buttons:
-                    if button.audio_path is None:
+                audio_files = [f for f in os.listdir(folder_path) if f.endswith(('.mp3', '.wav'))]
+                for i, audio_file in enumerate(audio_files):
+                    file_path = os.path.join(folder_path, audio_file)
+                    self.audio_manager.load_audio(file_path)
+                    audio_name = os.path.basename(file_path)
+                    if i < len(self.buttons):
+                        self.buttons[i].set_audio(file_path, audio_name)
+                    else:
+                        button = SoundButton(self.buttons_frame, self.audio_manager, text=audio_name)
                         button.set_audio(file_path, audio_name)
-                        break
+                        button.grid(row=(i // 4), column=(i % 4), padx=10, pady=10)
+                        self.buttons.append(button)
             except Exception as e:
                 messagebox.showerror("Error", str(e))
 
@@ -95,3 +98,7 @@ class SoundboardApp(tk.Tk):
 
     def show_about(self):
         messagebox.showinfo(title="Soundboard", message="Version 1.22.10\nhttps://github.com/ViciousSquid/Soundboard")
+
+if __name__ == "__main__":
+    app = SoundboardApp()
+    app.mainloop()
