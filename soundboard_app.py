@@ -37,7 +37,8 @@ class SoundboardApp(tk.Tk):
 
         file_menu = tk.Menu(menu_bar)
         menu_bar.add_cascade(label="File", menu=file_menu)
-        file_menu.add_command(label="Load Audio", command=self.load_audio)
+        file_menu.add_command(label="Load File", command=self.load_file)
+        file_menu.add_command(label="Load Folder", command=self.load_folder)
 
         settings_menu = tk.Menu(menu_bar)
         menu_bar.add_cascade(label="Settings", menu=settings_menu)
@@ -66,10 +67,25 @@ class SoundboardApp(tk.Tk):
             button.grid(row=row, column=col, padx=10, pady=10)
             self.buttons.append(button)
 
-    def load_audio(self):
+    def load_file(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mp3 *.wav")])
+        if file_path:
+            try:
+                self.audio_manager.load_audio(file_path)
+                audio_name = os.path.basename(file_path)
+                for button in self.buttons:
+                    if button.audio_path is None:
+                        button.set_audio(file_path, audio_name)
+                        break
+            except Exception as e:
+                messagebox.showerror("Error", str(e))
+
+    def load_folder(self):
         folder_path = filedialog.askdirectory()
         if folder_path:
             try:
+                folder_name = os.path.basename(folder_path)
+                self.title(f"Soundboard - {folder_name}")
                 audio_files = [f for f in os.listdir(folder_path) if f.endswith(('.mp3', '.wav'))]
                 for i, audio_file in enumerate(audio_files):
                     file_path = os.path.join(folder_path, audio_file)
